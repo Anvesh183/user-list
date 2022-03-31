@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AddPlayer from "./components/Players/AddPlayer";
+import PlayerList from "./components/Players/PlayerList";
 
 function App() {
+  const [PlayersList, setPlayersList] = useState([]);
+
+  const addPlayerHandler = (playerName, playerAge, playerJersey) => {
+    setPlayersList((prevPlayersList) => {
+      return [
+        ...prevPlayersList,
+        { playerName: playerName, age: playerAge, jerseyNumber: playerJersey },
+      ];
+    });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddPlayer onAddPlayer={addPlayerHandler} />
+      <PlayerList players={PlayersList} />
     </div>
   );
 }

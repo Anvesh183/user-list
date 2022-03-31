@@ -1,0 +1,24 @@
+.input-form {
+  max-width: 25rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.5rem;
+  width: 90%;
+  border: 1px solid gray;
+}
+
+input:focus {
+  outline: 0;
+  border-color: #03c7f8;
+}
